@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Admission Form</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #141e30, #243b55);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 50px 0;
+            margin: 0;
+        }
+
+        .form-container {
+            background-color: #1f2a38;
+            width: 650px;
+            padding: 30px 35px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+            color: #f1f1f1;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 25px;
+            color: #ffffff;
+        }
+
+        fieldset {
+            border: 1px solid #3a4a5d;
+            border-radius: 12px;
+            padding: 22px;
+            margin-bottom: 22px;
+            background-color: #223142;
+        }
+
+        legend {
+            padding: 0 10px;
+            font-weight: bold;
+            color: #ffffff;
+        }
+
+        label {
+            font-weight: 600;
+            display: block;
+            margin-bottom: 6px;
+            margin-top: 12px;
+            color: #d1d5db;
+            letter-spacing: 0.3px;
+        }
+
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="date"],
+        input[type="file"],
+        select {
+            width: 100%;
+            padding: 10px;
+            border-radius: 6px;
+            border: 1px solid #555;
+            margin-bottom: 12px;
+            font-size: 14px;
+            background-color: #2c3e50;
+            color: #ffffff;
+            transition: all 0.3s ease;
+        }
+
+        input:focus,
+        select:focus {
+            outline: none;
+            border-color: #3b82f6;
+            box-shadow: 0 0 8px rgba(59, 130, 246, 0.6);
+            background-color: #34495e;
+        }
+
+        input::placeholder {
+            color: #bbbbbb;
+        }
+
+        input[type="radio"],
+        input[type="checkbox"] {
+            margin-right: 6px;
+        }
+
+        .gender-group label {
+            display: inline-block;
+            font-weight: normal;
+            margin-right: 15px;
+            color: #ddd;
+        }
+
+        .terms-box {
+            background-color: #2a3a4d;
+            border: 1px solid #444;
+            border-radius: 8px;
+            padding: 10px 15px;
+            margin-bottom: 10px;
+            font-size: 14px;
+            color: #ddd;
+        }
+
+        .terms-box ul {
+            padding-left: 20px;
+            margin: 5px 0;
+        }
+
+        .checkbox-label {
+            display: flex;
+            align-items: center;
+            font-weight: normal;
+            margin-top: 10px;
+            color: #ddd;
+        }
+
+        .btn-group {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        button {
+            padding: 10px 25px;
+            border-radius: 8px;
+            border: none;
+            font-size: 15px;
+            cursor: pointer;
+            margin: 5px;
+            transition: all 0.3s ease;
+        }
+
+        /* Submit button – cool blue */
+        button[type="submit"] {
+            background-color: #3b82f6;
+            color: #ffffff;
+            box-shadow: 0 0 10px rgba(59, 130, 246, 0.4);
+        }
+
+        /* Reset button – soft gray */
+        button[type="reset"] {
+            background-color: #4b5563;
+            color: #ffffff;
+            box-shadow: 0 0 10px rgba(75, 85, 99, 0.4);
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            opacity: 0.95;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="form-container">
+        <h1>Admission Form</h1>
+
+        <form>
+            <fieldset>
+                <legend>University Admission Form</legend>
+
+                <label for="fullname">Full Name</label>
+                <input type="text" id="fullname" name="fullname" maxlength="50" placeholder="Enter Name" required>
+
+                <label for="email">Email ID</label>
+                <input type="email" id="email" name="email" placeholder="Enter Email" required>
+
+                <label for="phn_no">Phone Number</label>
+                <input type="tel" id="phn_no" name="phn_no" placeholder="Enter Phone No." minlength="10" maxlength="10"
+                    required>
+
+                <label for="dob">Date of Birth</label>
+                <input type="date" id="dob" name="dob" required min="1995-01-01" max="2025-12-31">
+
+                <label>Gender</label>
+                <div class="gender-group">
+                    <input type="radio" id="male" name="gender" value="Male" required>
+                    <label for="male">Male</label>
+
+                    <input type="radio" id="female" name="gender" value="Female">
+                    <label for="female">Female</label>
+
+                    <input type="radio" id="other" name="gender" value="Other">
+                    <label for="other">Other</label>
+                </div>
+
+                <label for="branch">Course</label>
+                <select id="branch" name="branch">
+                    <option value="BCA">BCA</option>
+                    <option value="B.Sc">B.Sc</option>
+                    <option value="MCA">MCA</option>
+                    <option value="M.Sc">M.Sc</option>
+                </select>
+
+                <label for="photo">Upload Photo</label>
+                <input type="file" id="photo" name="photo" accept="image/*" required>
+
+                <div class="terms-box">
+                    <strong>Terms and Conditions:</strong>
+                    <ul>
+                        <li>All information provided must be accurate and true.</li>
+                        <li>Submission of the form does not guarantee admission.</li>
+                        <li>The university may reject incomplete or incorrect forms.</li>
+                        <li>Uploaded documents and photos must be valid and recent.</li>
+                        <li>Your data will be used only for admission processing.</li>
+                    </ul>
+                </div>
+
+                <label class="checkbox-label">
+                    <input type="checkbox" name="t&c" required>
+                    I agree to the Terms and Conditions
+                </label>
+
+                <div class="btn-group">
+                    <button type="submit">Submit</button>
+                    <button type="reset">Reset</button>
+                </div>
+
+            </fieldset>
+        </form>
+    </div>
+
+</body>
+
+</html>

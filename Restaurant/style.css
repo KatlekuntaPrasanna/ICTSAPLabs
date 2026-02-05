@@ -1,0 +1,615 @@
+/* ================= GLOBAL STYLES ================= */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: #f4f6f9;
+}
+
+/* ================= HEADER ================= */
+header {
+    background: #e74c3c;
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 98%;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    height: 8vh;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 22px;
+}
+
+.cart-icon {
+    font-size: 24px;
+    cursor: pointer;
+    position: relative;
+}
+
+.cart-icon span {
+    background: yellow;
+    color: black;
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 12px;
+    position: absolute;
+    top: -8px;
+    right: -10px;
+}
+
+/* Add spacing below fixed header */
+#mainContent {
+    padding-top: 70px;
+    /* same as header height */
+}
+
+/* ================= HEADINGS ================= */
+h2 {
+    margin-top: 30px;
+    color: #333;
+}
+
+/* ================= CATEGORY SECTIONS ================= */
+.section {
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.category-section {
+    margin-bottom: 40px;
+}
+
+.category-section h2 {
+    margin: 20px 0 15px;
+    color: #d60000;
+    border-left: 5px solid #d60000;
+    padding-left: 10px;
+}
+
+/* ================= FOOD CARDS ================= */
+.menu-grid {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding-bottom: 10px;
+}
+
+.menu-grid::-webkit-scrollbar {
+    height: 6px;
+}
+
+.menu-grid::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 3px;
+}
+
+.menu-grid::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.card {
+    flex: 0 0 220px;
+    background: white;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    padding: 15px;
+    transition: transform 0.2s ease;
+}
+
+.card:hover {
+    transform: scale(1.03);
+}
+
+.card img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.card h3 {
+    font-size: 18px;
+    margin: 10px 0 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.price {
+    color: #e53935;
+    font-weight: bold;
+    margin: 5px 0;
+    font-size: 16px;
+}
+
+.card button {
+    background: #28a745;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background 0.2s ease;
+}
+
+.card button:hover {
+    background: #1e7e34;
+}
+
+/* ================= CART PANEL ================= */
+.cart-panel {
+    position: fixed;
+    right: -350px;
+    top: 0;
+    width: 300px;
+    height: 100%;
+    background: white;
+    box-shadow: -4px 0 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    transition: right 0.3s ease;
+    overflow-y: auto;
+    z-index: 1001;
+}
+
+.cart-panel.open {
+    right: 0;
+}
+
+.cart-item {
+    border-bottom: 1px solid #ddd;
+    padding: 8px 0;
+    display: flex;
+    font-size: 14px;
+}
+
+.total {
+    margin-top: 15px;
+    font-weight: bold;
+    text-align: right;
+}
+
+.cart-panel button {
+    margin-top: 10px;
+    width: 100%;
+    background: #e74c3c;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.cart-panel button:hover {
+    background: #c0392b;
+}
+
+/* ================= CAROUSEL ================= */
+.carousel {
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.slides {
+    position: relative;
+    height: 400px;
+}
+
+.slide {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    position: absolute;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+/* ================= FILTERS ================= */
+.filters {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.filters select {
+    padding: 8px 12px;
+    border-radius: 6px;
+}
+
+/* ================= LANDING PAGE ================= */
+.landing {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+.landing::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url("https://images.unsplash.com/photo-1504674900247-0877df9cc836") no-repeat center/cover;
+    filter: blur(1px);
+    transform: scale(1.1);
+    z-index: 0;
+}
+
+.landing::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.landing-content {
+    position: relative;
+    z-index: 2;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 40px;
+    border-radius: 10px;
+    color: white;
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.25),
+        0 0 60px rgba(255, 140, 0, 0.15);
+}
+
+.landing-content h1 {
+    font-size: 42px;
+    margin-bottom: 10px;
+}
+
+.landing-content p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.landing-content button {
+    padding: 12px 25px;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    background: rgb(240, 62, 22);
+    color: white;
+    cursor: pointer;
+}
+
+.landing-content button:hover {
+    background: #c70101;
+}
+
+/* ================= RESPONSIVE ================= */
+@media screen and (max-width: 1024px) {
+    .category-section .card {
+        flex: 0 0 200px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .menu-grid {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .card {
+        height: auto;
+    }
+
+    .card img {
+        height: 120px;
+    }
+
+    .category-section .card {
+        flex: 0 0 45%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .category-section .card {
+        flex: 0 0 100%;
+    }
+}
+
+/* ===== FOOTER ===== */
+.site-footer {
+    background: #222;
+    color: #eee;
+    padding: 40px 20px 10px;
+    margin-top: 40px;
+    font-size: 14px;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.footer-section h3,
+.footer-section h4 {
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.footer-section p,
+.footer-section li,
+.footer-section a {
+    color: #bbb;
+    text-decoration: none;
+    line-height: 1.8;
+}
+
+.footer-section a:hover {
+    color: #ff4d4d;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.social-icons a {
+    font-size: 20px;
+    margin-right: 10px;
+    display: inline-block;
+}
+
+.footer-bottom {
+    text-align: center;
+    border-top: 1px solid #444;
+    margin-top: 30px;
+    padding-top: 10px;
+    color: #888;
+}
+
+.social-icons a {
+    display: inline-block;
+    margin-right: 12px;
+    color: #bbb;
+    font-size: 20px;
+    margin-right: 15px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icons img {
+    width: 24px;
+    height: 24px;
+}
+
+.social-icons a:hover {
+    transform: scale(1.2);
+    opacity: 0.8;
+    color: #ff4d4d;
+
+}
+
+/* SEARCH BAR */
+.search-bar {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.search-bar input {
+    width: 60%;
+    max-width: 400px;
+    padding: 10px 15px;
+    border-radius: 25px;
+    border: 1px solid #ccc;
+}
+
+/* OFFER */
+.offer-banner {
+    background: #ffe9e9;
+    color: #d60000;
+    text-align: center;
+    padding: 8px;
+    font-weight: bold;
+}
+
+/* FOOD CARD EXTRA INFO */
+.rating {
+    font-size: 13px;
+    color: #090000b7;
+    font-weight: bold;
+}
+
+.badge {
+    font-size: 10px;
+    padding: 3px 6px;
+    border-radius: 4px;
+    color: white;
+    margin-bottom: 5px;
+    display: inline-block;
+}
+
+.veg {
+    background: green;
+}
+
+.nonveg {
+    background: red;
+}
+
+/* SMOOTH HOVER */
+.card {
+    transition: transform .3s, box-shadow .3s;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* EMPTY CART */
+.empty-cart {
+    text-align: center;
+    color: #777;
+    padding: 20px;
+}
+
+/* STICKY CART BAR */
+.bottom-cart {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #ff4d4d;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 20px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 999;
+}
+
+#cartCount {
+    background: red;
+    color: white;
+    font-size: 12px;
+    padding: 2px 7px;
+    border-radius: 50%;
+    margin-left: 5px;
+}
+
+/* ================= CART ITEM DESIGN ================= */
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid #eee;
+    gap: 10px;
+}
+
+.cart-item span {
+    font-size: 14px;
+    color: #333;
+}
+
+/* Item name + qty container */
+.cart-item .item-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Price styling */
+.cart-item .item-price {
+    font-weight: bold;
+    color: #e53935;
+    min-width: 70px;
+    text-align: right;
+}
+
+/* Quantity controls */
+.qty-controls {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: #f5f5f5;
+    border-radius: 20px;
+    padding: 4px 8px;
+}
+
+.qty-controls button {
+    background: #e74c3c;
+    color: white;
+    border: none;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.qty-controls button:hover {
+    background: #c0392b;
+}
+
+.qty-controls span {
+    font-size: 14px;
+    min-width: 18px;
+    text-align: center;
+}
+
+.bill-summary {
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.bill-summary p {
+    display: flex;
+    justify-content: space-between;
+    margin: 6px 0;
+}
+
+.bill-summary h3 {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    color: #000;
+}
+
+
+.coupon-box {
+    margin-top: 15px;
+}
+
+.coupon-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.coupon-box input {
+    flex: 1;
+    padding: 6px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+.coupon-box button {
+    background: #ff9800;
+    border: none;
+    color: white;
+    padding: 6px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.coupon-msg {
+    font-size: 12px;
+    margin-top: 5px;
+}

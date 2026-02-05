@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Profile Card with Pill Buttons</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #1e293b, #0f172a);
+        }
+
+        .profile-card {
+            width: 400px;
+            background: #fff;
+            border-radius: 20px;
+            padding: 30px 25px;
+            text-align: center;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.35);
+            border: 12px solid transparent;
+            border-image: linear-gradient(135deg, #475569, #94a3b8, #475569) 1;
+            background-clip: padding-box;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .profile-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 35px 65px rgba(0, 0, 0, 0.45);
+        }
+
+        .profile-img {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #334155;
+            margin-bottom: 15px;
+        }
+
+        h2 {
+            margin: 10px 0 5px;
+            font-size: 22px;
+            color: #1e293b;
+        }
+
+        .role {
+            font-size: 14px;
+            color: #64748b;
+            margin-bottom: 15px;
+            display: inline-block;
+            padding-bottom: 4px;
+            border-bottom: 2px solid #0f172a;
+        }
+
+        .bio {
+            font-size: 13px;
+            color: #475569;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            padding: 0 10px;
+        }
+
+        /* Buttons group with pill style */
+        .btn-group {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 15px;
+            gap: 10px;
+        }
+
+        .btn {
+            flex: 1;
+            padding: 10px 0;
+            border-radius: 50px;
+            /* pill shape */
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: #f8fafc;
+            border-width: 2px;
+            border-style: solid;
+        }
+
+        .btn1 {
+            border-color: #16a34a;
+            color: #16a34a;
+        }
+
+        .btn2 {
+            border-color: #2563eb;
+            color: #2563eb;
+            border-style: dashed;
+        }
+
+        .btn3 {
+            border-color: #dc2626;
+            color: #dc2626;
+            border-style: dotted;
+        }
+
+        .btn4 {
+            border-color: #230553;
+            color: #230553;
+            border-style: double;
+        }
+
+        .btn:hover {
+            color: #fff !important;
+        }
+
+        .btn1:hover {
+            background-color: #16a34a;
+        }
+
+        .btn2:hover {
+            background-color: #2563eb;
+        }
+
+        .btn3:hover {
+            background-color: #dc2626;
+        }
+
+        .btn4:hover {
+            background-color: #230553;
+        }
+
+        .nav {
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-around;
+            border-top: 1px solid #e2e8f0;
+            padding-top: 12px;
+        }
+
+        .nav a {
+            text-decoration: none;
+            color: #334155;
+            font-size: 13px;
+            font-weight: 500;
+            position: relative;
+            padding-bottom: 4px;
+        }
+
+        .nav a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 0%;
+            height: 2px;
+            background: #334155;
+            transition: width 0.3s ease;
+        }
+
+        .nav a:hover::after {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="profile-card">
+        <img src="profile.jpg" alt="Profile Picture" class="profile-img">
+        <h2>K. Prasanna</h2>
+        <div class="role">Full Stack Developer</div>
+        <div class="bio">
+            Passionate developer focused on building scalable web applications and clean user experiences.
+        </div>
+
+        <!-- Pill Buttons -->
+        <div class="btn-group">
+            <button class="btn btn1">Connect</button>
+            <button class="btn btn2">Message</button>
+            <button class="btn btn3">Portfolio</button>
+            <button class="btn btn4">Follow</button>
+        </div>
+
+        <!-- Navigation -->
+        <div class="nav">
+            <a href="#">Profile</a>
+            <a href="#">Projects</a>
+            <a href="#">Contact</a>
+        </div>
+    </div>
+
+</body>
+
+</html>

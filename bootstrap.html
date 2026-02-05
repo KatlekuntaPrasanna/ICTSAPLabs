@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Incredible India Tourism</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            padding-top: 70px;
+            scroll-behavior: smooth;
+        }
+
+        /* Hide all sections by default */
+        .section {
+            display: none;
+        }
+
+        /* Fullscreen welcome background below navbar */
+        .welcome-section {
+            height: calc(100vh - 70px);
+            background: url("https://www.fabhotels.com/blog/wp-content/uploads/2022/11/shutterstock_298411103-1.jpg") no-repeat center center/cover;
+            color: black;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding-top: 250px;
+        }
+
+        .welcome-content {
+            text-align: right;
+            padding-right: 50px;
+            font-size: 25px;
+            text-shadow: 2px 2px 4px #fff;
+        }
+
+
+        .carousel-item img {
+            height: 450px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .card-img-top {
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .icon-img {
+            height: 50px;
+            width: 50px;
+        }
+
+        .navbar-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-left: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar bg-body-tertiary fixed-top shadow-sm">
+        <div class="container-fluid">
+            <a class="navbar-brand d-flex flex-row align-items-center" href="#">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqwNBskX9HES9c4E2LgoFhIH6OUi42uJEWiw&s"
+                    alt="Logo" width="30" height="24" class="d-inline-block align-text-top icon-img">
+                <span class="navbar-title">Tourism</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- 🌍 Welcome Section -->
+    <div id="welcome" class="section welcome-section text-right">
+        <div class="welcome-content">
+            <h1>Welcome to Incredible India</h1>
+            <p>Discover beautiful tourist destinations</p>
+            <button class="btn btn-primary btn-lg mt-3" onclick="showSection('places')">Explore</button>
+        </div>
+    </div>
+
+
+    <!-- 🟡 Tourist Places Section -->
+    <div id="places" class="section container my-5">
+        <h2 class="text-center mb-4">Famous Tourist Places</h2>
+        <div class="row g-4 justify-content-center">
+
+            <div class="col-md-4">
+                <div class="card text-center h-100 shadow-sm">
+                    <img src="https://static.investindia.gov.in/s3fs-public/2023-06/1.jpg" class="card-img-top">
+                    <div class="card-body">
+                        <h5>Jaipur</h5>
+                        <button class="btn btn-primary" onclick="showSection('jaipurDetails')">View Details</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card text-center h-100 shadow-sm">
+                    <img src="https://indusgowebstorage.blob.core.windows.net/uploads/media/1760470429660_xjd2r2glu_7ced05522f.jpg"
+                        class="card-img-top">
+                    <div class="card-body">
+                        <h5>Kerala</h5>
+                        <button class="btn btn-primary" onclick="showSection('keralaDetails')">View Details</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card text-center h-100 shadow-sm">
+                    <img src="https://static.toiimg.com/photo/63282406.cms" class="card-img-top">
+                    <div class="card-body">
+                        <h5>Taj Mahal</h5>
+                        <button class="btn btn-primary" onclick="showSection('tajDetails')">View Details</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="text-center mt-4">
+            <button class="btn btn-secondary" onclick="showSection('welcome')">⬅ Back</button>
+        </div>
+    </div>
+
+    <!-- 🔵 Jaipur Details -->
+    <div id="jaipurDetails" class="section container my-5">
+        <h2 class="text-center">Jaipur – The Pink City</h2>
+
+        <div id="jaipurCarousel" class="carousel slide mx-auto my-3" style="max-width:900px" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="https://static.investindia.gov.in/s3fs-public/2023-06/1.jpg" class="d-block w-100">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://www.holidify.com/images/cmsuploads/compressed/shutterstock_1031572588_20200219165610_20200219165630.jpg"
+                        class="d-block w-100">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://www.indianholiday.com/wordpress/wp-content/uploads/2013/11/List-of-Top-10-Tourist-Attractions-Around-Jaipur.jpg"
+                        class="d-block w-100">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#jaipurCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#jaipurCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+        </div>
+
+        <p class="mt-4 text-center">
+            Jaipur, the capital of Rajasthan, is famously known as the Pink City due to its distinct rose-colored
+            buildings in the old city.
+            It is a hub of royal heritage and colorful culture, offering majestic palaces like City Palace, Hawa Mahal,
+            and the ancient Amber Fort.
+            Visitors can explore bustling markets, taste traditional Rajasthani cuisine, and witness folk music and
+            dance performances that celebrate the city's rich history.
+        </p>
+
+        <div class="text-center">
+            <button class="btn btn-secondary" onclick="showSection('places')">⬅ Back to Places</button>
+        </div>
+    </div>
+
+    <!-- 🟢 Kerala Details -->
+    <div id="keralaDetails" class="section container my-5">
+        <h2 class="text-center">Kerala – God's Own Country</h2>
+
+        <div id="keralaCarousel" class="carousel slide mx-auto my-3" style="max-width:900px" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="https://indusgowebstorage.blob.core.windows.net/uploads/media/1760470429660_xjd2r2glu_7ced05522f.jpg"
+                        class="d-block w-100">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://www.ekeralatourism.net/wp-content/uploads/2018/03/Alleppey.jpg"
+                        class="d-block w-100">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://seoimgak.mmtcdn.com/blog/sites/default/files/images/allepey.jpg"
+                        class="d-block w-100">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#keralaCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#keralaCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+        </div>
+
+        <p class="mt-4 text-center">
+            Kerala, fondly called "God's Own Country," is renowned for its serene backwaters, lush green landscapes, and
+            picturesque beaches.
+            Houseboat cruises in Alleppey or Kumarakom provide a peaceful experience, gliding past coconut groves, paddy
+            fields, and quaint villages.
+            The state is also famous for its Ayurvedic treatments, spice plantations, and traditional festivals that
+            reflect Kerala's rich cultural heritage.
+            A visit here is a perfect blend of relaxation, adventure, and cultural exploration.
+        </p>
+
+        <div class="text-center">
+            <button class="btn btn-secondary" onclick="showSection('places')">⬅ Back to Places</button>
+        </div>
+    </div>
+
+    <!-- 🟣 Taj Mahal Details -->
+    <div id="tajDetails" class="section container my-5">
+        <h2 class="text-center">Taj Mahal – Symbol of Love</h2>
+
+        <div id="tajCarousel" class="carousel slide mx-auto my-3" style="max-width:900px" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="https://cdn.pixabay.com/photo/2020/06/05/21/09/cultural-tourism-5264542_1280.jpg"
+                        class="d-block w-100">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://static.wixstatic.com/media/055605_65e20a7fcbc54e2e8720adfc2544c35e~mv2.jpg/v1/fill/w_1800,h_1082,al_c,q_85/taj_new_contant_edited.jpg"
+                        class="d-block w-100">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://cdn.britannica.com/07/129607-050-D4A6E6A0/Taj-Mahal-sunrise-Agra-India.jpg"
+                        class="d-block w-100">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#tajCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#tajCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+        </div>
+
+        <p class="mt-4 text-center">
+            The Taj Mahal, located in Agra, is an architectural marvel and one of the Seven Wonders of the World.
+            Built by Emperor Shah Jahan in memory of his beloved wife Mumtaz Mahal, this white marble mausoleum is an
+            enduring symbol of eternal love.
+            Visitors are mesmerized by its intricate carvings, symmetrical gardens, reflecting pools, and stunning
+            sunrise or sunset views.
+            The Taj Mahal also represents the pinnacle of Mughal architecture and craftsmanship, making it a must-visit
+            destination for travelers worldwide.
+        </p>
+
+        <div class="text-center">
+            <button class="btn btn-secondary" onclick="showSection('places')">⬅ Back to Places</button>
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function showSection(sectionId) {
+            document.querySelectorAll('.section').forEach(sec => sec.style.display = 'none');
+            document.getElementById(sectionId).style.display = 'block';
+        }
+
+        // Show welcome section on page load
+        showSection('welcome');
+    </script>
+
+</body>
+
+</html>

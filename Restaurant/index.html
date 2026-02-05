@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Restaurant Ordering System</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ===== LANDING PAGE ===== -->
+    <section id="landingPage" class="landing">
+        <div class="landing-content">
+            <h1>Welcome to Foodie's Paradise</h1>
+            <p>Fresh • Delicious • Delivered Fast</p>
+            <button onclick="showMenu()">View Menu</button>
+        </div>
+    </section>
+
+    <!-- ===== MAIN WEBSITE CONTENT ===== -->
+    <main id="mainContent" style="display: none;">
+
+        <!-- HEADER -->
+        <header>
+            <h1>Foodie’s Paradise</h1>
+            <button class="cart-icon" onclick="toggleCart()" aria-label="Shopping Cart">
+                🛒 <span id="cartCount">0</span>
+            </button>
+        </header>
+
+        <!-- OFFER BANNER -->
+        <section class="offer-banner">
+            🎉 Flat 20% OFF on orders above ₹499 | Use Code: FOODIE20
+        </section>
+
+        <!-- HERO / FOOD CAROUSEL -->
+        <section class="carousel" aria-label="Popular Dishes">
+            <div class="slides">
+                <img src="https://static.vecteezy.com/system/resources/previews/054/743/080/large_2x/the-perfect-dish-of-chicken-biryani-for-your-culinary-inspiration-photo.jpg"
+                    alt="Delicious Chicken Biryani" class="slide active">
+                <img src="https://t3.ftcdn.net/jpg/00/27/57/96/360_F_27579652_tM7V4fZBBw8RLmZo0Bi8WhtO2EosTRFD.jpg"
+                    alt="Tasty Indian Curry" class="slide">
+                <img src="https://i.ytimg.com/vi/Q3iUQSG4DBM/hq720.jpg" alt="Freshly Prepared Dessert" class="slide">
+            </div>
+        </section>
+
+        <!-- FILTERS / MENU CONTROLS -->
+        <nav class="filters" aria-label="Menu Filters">
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="Search for dishes...">
+            </div>
+            <div><label style="font-weight: bold;" for="categoryFilter">Category:</label>
+                <select id="categoryFilter">
+                    <option value="all">All Categories</option>
+                    <option value="starters">Starters</option>
+                    <option value="biryanis">Biryanis</option>
+                    <option value="curries">Curries</option>
+                    <option value="desserts">Desserts</option>
+                    <option value="drinks">Drinks</option>
+                </select>
+            </div>
+
+            <div>
+                <label style="font-weight: bold;" for="priceSort">Sort by Price:</label>
+                <select id="priceSort">
+                    <option value="default">Sort by Price</option>
+                    <option value="low">Low to High</option>
+                    <option value="high">High to Low</option>
+                </select>
+            </div>
+        </nav>
+
+        <!-- FOOD ITEMS -->
+        <section id="foodContainer" aria-label="Food Menu">
+            <!-- Each food item should be an <article> added via JS -->
+        </section>
+
+        <!-- CART PANEL -->
+        <aside id="cartPanel" class="cart-panel" aria-labelledby="cartHeading">
+            <h2 id="cartHeading">Your Cart 🛒</h2>
+            <div id="cartItems"></div>
+            <div class="coupon-box">
+                <div class="coupon-text">
+                    <input type="text" id="couponInput" placeholder="Enter coupon code">
+                    <button onclick="applyCoupon()">Apply</button>
+                </div>
+                <p id="couponMsg" class="coupon-msg"></p>
+            </div>
+            <div class="total">Total: ₹<span id="totalAmount">0</span></div>
+            <button onclick="placeOrder()">Order Now</button>
+            <button onclick="toggleCart()">Close</button>
+        </aside>
+
+    </main>
+    <footer class="site-footer">
+        <div class="footer-container">
+
+            <!-- About -->
+            <section class="footer-section">
+                <h3>Foodie’s Paradise</h3>
+                <p>Serving happiness on a plate. Fresh ingredients, authentic taste, and fast delivery at your doorstep.
+                </p>
+            </section>
+
+            <!-- Quick Links -->
+            <nav class="footer-section" aria-label="Footer Navigation">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#landingPage">Home</a></li>
+                    <li><a href="#foodContainer">Menu</a></li>
+                    <li><a href="#" onclick="toggleCart()">Cart</a></li>
+                </ul>
+            </nav>
+
+            <!-- Contact Info -->
+            <section class="footer-section">
+                <h4>Contact Us</h4>
+                <p>📍 Hyderabad, India</p>
+                <p>📞 +91 98765 43210</p>
+                <p>✉ support@foodiesparadise.com</p>
+            </section>
+
+            <!-- Social Media -->
+            <section class="footer-section">
+                <h4>Follow Us</h4>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </section>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Foodie’s Paradise | All Rights Reserved</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>
