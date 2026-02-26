@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<head>
+    <title>JavaScript Demo</title>
+</head>
+
+<body>
+    <div>
+        <h1>Javascript</h1>
+        <button onclick="imageToggle()">Click Me</button>
+        <img id="image" src="https://images.pexels.com/photos/674010/pexels-photo-674010.jpeg" width="600px"
+            height="400px" alt="image1">
+    </div>
+
+    <script>
+        {
+            const image1 = "https://images.pexels.com/photos/674010/pexels-photo-674010.jpeg";
+            const image2 = "https://cdn.pixabay.com/photo/2024/05/26/10/15/bird-8788491_1280.jpg"
+            const image = document.getElementById("image");
+            function imageToggle() {
+                if (image.src === image2) {
+                    image.src = image1;
+                }
+                else {
+                    image.src = image2;
+                }
+            }
+            image.addEventListener("click", imageToggle)
+        }
+    </script>
+</body>
+
+</html>
